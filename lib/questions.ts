@@ -1,264 +1,104 @@
-import { Question } from "../types/quiz";
+import { Question } from '../types/quiz';
 
 export const QUESTIONS: Question[] = [
-  {
-    id: "friday-incident",
-    prompt: "A critical production issue is reported Friday at 4:55 PM. What’s your move?",
-    options: [
-      {
-        id: "hotfix-blind",
-        label: "Ship a hotfix directly to main and hope observability catches it.",
-        effects: { chaos: 20, ego: 10 },
-      },
-      {
-        id: "analyze-root",
-        label: "Stabilize the system, write a quick RCA plan, and schedule proper remediation.",
-        effects: { cleanCode: 20 },
-      },
-      {
-        id: "ai-patch",
-        label: "Generate a patch with AI and deploy after a quick skim.",
-        effects: { aiDependency: 20, chaos: 5 },
-      },
-      {
-        id: "delay-monday",
-        label: "Mitigate impact and formally address it first thing Monday.",
-        effects: { burnout: 10, cleanCode: 10 },
-      },
-    ],
-  },
-  {
-    id: "stable-stack",
-    prompt: "Your tech lead proposes sticking with a stable, proven tech stack.",
-    options: [
-      {
-        id: "trend-chaser",
-        label: "Push for adopting a framework that launched this morning.",
-        effects: { chaos: 20, ego: 15 },
-      },
-      {
-        id: "evaluate-properly",
-        label: "Request a technical comparison before making a decision.",
-        effects: { cleanCode: 15 },
-      },
-      {
-        id: "secret-rewrite",
-        label: "Agree publicly, prototype something else privately.",
-        effects: { chaos: 15, ego: 10 },
-      },
-      {
-        id: "accept-tradeoffs",
-        label: "Accept the trade-offs and focus on delivery quality.",
-        effects: { cleanCode: 20, burnout: 5 },
-      },
-    ],
-  },
-  {
-    id: "browser-tabs",
-    prompt: "How many browser tabs are currently open?",
-    options: [
-      {
-        id: "minimalist",
-        label: "Under 10. Context switching is expensive.",
-        effects: { cleanCode: 20 },
-      },
-      {
-        id: "balanced",
-        label: "Between 10 and 40. Organized chaos.",
-        effects: { burnout: 10 },
-      },
-      {
-        id: "overloaded",
-        label: "More than 80. Research never ends.",
-        effects: { chaos: 15, burnout: 15 },
-      },
-      {
-        id: "session-restore",
-        label: "Enough that session restore is part of my workflow.",
-        effects: { chaos: 20 },
-      },
-    ],
-  },
-  {
-    id: "testing-philosophy",
-    prompt: "What’s your philosophy on automated testing?",
-    options: [
-      {
-        id: "test-driven",
-        label: "Tests first. Features second.",
-        effects: { cleanCode: 25, burnout: 5 },
-      },
-      {
-        id: "ship-then-test",
-        label: "Ship fast, cover edge cases later.",
-        effects: { chaos: 20 },
-      },
-      {
-        id: "minimal-tests",
-        label: "Critical paths only. Balance matters.",
-        effects: { cleanCode: 15 },
-      },
-      {
-        id: "ai-generates",
-        label: "Let AI generate the test suite.",
-        effects: { aiDependency: 20 },
-      },
-    ],
-  },
-  {
-    id: "code-review",
-    prompt: "A junior developer requests a code review.",
-    options: [
-      {
-        id: "deep-review",
-        label: "Provide detailed feedback with explanations and references.",
-        effects: { cleanCode: 20 },
-      },
-      {
-        id: "surface-level",
-        label: "Approve quickly to keep velocity high.",
-        effects: { chaos: 15 },
-      },
-      {
-        id: "overengineer-feedback",
-        label: "Suggest architectural refactors beyond the PR scope.",
-        effects: { ego: 15, burnout: 5 },
-      },
-      {
-        id: "ai-review",
-        label: "Run it through an AI reviewer and forward the summary.",
-        effects: { aiDependency: 20 },
-      },
-    ],
-  },
-  {
-    id: "sprint-fuel",
-    prompt: "During a high-pressure sprint, your fuel source is:",
-    options: [
-      {
-        id: "structured-routine",
-        label: "Balanced meals and proper breaks.",
-        effects: { cleanCode: 15 },
-      },
-      {
-        id: "caffeine-loop",
-        label: "Caffeine and determination.",
-        effects: { burnout: 20 },
-      },
-      {
-        id: "snack-based",
-        label: "Whatever is within arm’s reach.",
-        effects: { chaos: 10 },
-      },
-      {
-        id: "ai-sustained",
-        label: "AI copilots and adrenaline.",
-        effects: { aiDependency: 20 },
-      },
-    ],
-  },
-  {
-    id: "documentation",
-    prompt: "How do you approach documentation?",
-    options: [
-      {
-        id: "living-docs",
-        label: "Maintain concise, updated documentation alongside code.",
-        effects: { cleanCode: 20 },
-      },
-      {
-        id: "code-speaks",
-        label: "Self-documenting code should be enough.",
-        effects: { ego: 10, chaos: 10 },
-      },
-      {
-        id: "auto-generated",
-        label: "Generate docs automatically and refine if needed.",
-        effects: { aiDependency: 15 },
-      },
-      {
-        id: "later-task",
-        label: "Add documentation as a backlog item.",
-        effects: { burnout: 10 },
-      },
-    ],
-  },
-  {
-    id: "legacy-system",
-    prompt: "You inherit a legacy codebase.",
-    options: [
-      {
-        id: "gradual-refactor",
-        label: "Refactor incrementally with strong regression tests.",
-        effects: { cleanCode: 20 },
-      },
-      {
-        id: "full-rewrite",
-        label: "Plan a full rewrite with modern tooling.",
-        effects: { ego: 20, chaos: 10 },
-      },
-      {
-        id: "stabilize-first",
-        label: "Stabilize, document, then optimize carefully.",
-        effects: { cleanCode: 15 },
-      },
-      {
-        id: "ai-migrate",
-        label: "Attempt automated migration with AI assistance.",
-        effects: { aiDependency: 20 },
-      },
-    ],
-  },
-  {
-    id: "internet-down",
-    prompt: "Your internet connection drops mid-task.",
-    options: [
-      {
-        id: "offline-mode",
-        label: "Continue working locally from memory.",
-        effects: { cleanCode: 15, ego: 10 },
-      },
-      {
-        id: "blocked",
-        label: "Pause until connectivity returns.",
-        effects: { burnout: 15 },
-      },
-      {
-        id: "documentation-time",
-        label: "Use the time to refine docs or architecture notes.",
-        effects: { cleanCode: 15 },
-      },
-      {
-        id: "lost-without-ai",
-        label: "Realize how much you rely on online tools.",
-        effects: { aiDependency: 20 },
-      },
-    ],
-  },
-  {
-    id: "career-vision",
-    prompt: "Where do you see your engineering career in 10 years?",
-    options: [
-      {
-        id: "technical-expert",
-        label: "Deep domain expert solving complex system problems.",
-        effects: { cleanCode: 20 },
-      },
-      {
-        id: "engineering-lead",
-        label: "Leading teams and shaping technical strategy.",
-        effects: { ego: 15 },
-      },
-      {
-        id: "ai-augmented",
-        label: "Operating at scale with heavy AI augmentation.",
-        effects: { aiDependency: 20 },
-      },
-      {
-        id: "independent-builder",
-        label: "Building and shipping independent products.",
-        effects: { chaos: 10, ego: 10 },
-      },
-    ],
-  },
+    {
+        id: 1,
+        text: "How do you handle a production bug discovered on Friday at 4:55 PM?",
+        options: [
+            { text: "Force push a 'quick fix' and immediately close your laptop.", scoreModifier: { chaosScore: 20, egoScore: 10 } },
+            { text: "Ask ChatGPT to write a fix and paste it without reading.", scoreModifier: { aiDependencyScore: 20, burnoutScore: 5 } },
+            { text: "Start a 4-hour post-mortem on Slack while crying.", scoreModifier: { burnoutScore: 15, cleanCodeScore: 10 } },
+            { text: "Blame the intern and go for a beer.", scoreModifier: { egoScore: 20, chaosScore: 5 } }
+        ]
+    },
+    {
+        id: 2,
+        text: "Your tech lead suggests using a stable, boring framework for the new project.",
+        options: [
+            { text: "Quit and start a new job that uses a framework released 2 hours ago.", scoreModifier: { chaosScore: 20, egoScore: 15 } },
+            { text: "Agree, then secretly implement it in Haskell.", scoreModifier: { chaosScore: 15, cleanCodeScore: 15 } },
+            { text: "Spend 3 days 'researching' why it's a terrible idea.", scoreModifier: { burnoutScore: 10, egoScore: 10 } },
+            { text: "Accept your fate and start writing the boilerplate.", scoreModifier: { burnoutScore: 20 } }
+        ]
+    },
+    {
+        id: 3,
+        text: "How many browser tabs do you have open right now?",
+        options: [
+            { text: "0-10: I am a machine.", scoreModifier: { cleanCodeScore: 20, egoScore: 10 } },
+            { text: "11-50: Normal developer misery.", scoreModifier: { burnoutScore: 5 } },
+            { text: "50-200: Help me.", scoreModifier: { chaosScore: 10, burnoutScore: 15 } },
+            { text: "My browser crashed 20 minutes ago.", scoreModifier: { chaosScore: 20, aiDependencyScore: 10 } }
+        ]
+    },
+    {
+        id: 4,
+        text: "What's your stance on unit tests?",
+        options: [
+            { text: "They are my religion. Even the tests have tests.", scoreModifier: { cleanCodeScore: 20, burnoutScore: 10 } },
+            { text: "I write them after the feature is already in production.", scoreModifier: { chaosScore: 10, egoScore: 10 } },
+            { text: "If it compiles, it works.", scoreModifier: { chaosScore: 20, egoScore: 5 } },
+            { text: "Testing is for people who don't trust their AI.", scoreModifier: { aiDependencyScore: 20, chaosScore: 10 } }
+        ]
+    },
+    {
+        id: 5,
+        text: "A junior dev asks you for a code review. What do you do?",
+        options: [
+            { text: "Request 'Minor' changes to 47 unrelated files.", scoreModifier: { egoScore: 20, cleanCodeScore: 10 } },
+            { text: "LGTM! (I didn't open the PR).", scoreModifier: { chaosScore: 15, burnoutScore: 5 } },
+            { text: "Spend 2 hours explaining why they should use a monad.", scoreModifier: { egoScore: 15, cleanCodeScore: 10 } },
+            { text: "Forward the PR link to Copilot.", scoreModifier: { aiDependencyScore: 20, burnoutScore: 5 } }
+        ]
+    },
+    {
+        id: 6,
+        text: "What is your primary source of nutrition during a sprint?",
+        options: [
+            { text: "Cold brew and pure spite.", scoreModifier: { burnoutScore: 20, egoScore: 5 } },
+            { text: "Soylent and existential dread.", scoreModifier: { cleanCodeScore: 10, burnoutScore: 10 } },
+            { text: "DoorDash and whatever is in the breakroom.", scoreModifier: { chaosScore: 10 } },
+            { text: "I don't eat, I just prompt.", scoreModifier: { aiDependencyScore: 20, chaosScore: 5 } }
+        ]
+    },
+    {
+        id: 7,
+        text: "How do you feel about Documentation?",
+        options: [
+            { text: "Code is the documentation.", scoreModifier: { chaosScore: 15, egoScore: 10 } },
+            { text: "I love it, but never actually write it.", scoreModifier: { burnoutScore: 5 } },
+            { text: "I generate it with AI and never check it.", scoreModifier: { aiDependencyScore: 20, chaosScore: 10 } },
+            { text: "I have a 400-page Wiki that no one reads.", scoreModifier: { cleanCodeScore: 20, burnoutScore: 15 } }
+        ]
+    },
+    {
+        id: 8,
+        text: "You encounter a 'legacy' codebase. How legacy is it?",
+        options: [
+            { text: "It was written in jQuery yesterday.", scoreModifier: { chaosScore: 10, burnoutScore: 5 } },
+            { text: "The original dev retired in 2004.", scoreModifier: { burnoutScore: 15 } },
+            { text: "It's running on a server that no one knows the location of.", scoreModifier: { chaosScore: 20, burnoutScore: 20 } },
+            { text: "I am currently rewriting it in Rust.", scoreModifier: { egoScore: 20, cleanCodeScore: 10 } }
+        ]
+    },
+    {
+        id: 9,
+        text: "Your internet goes out. What do you do?",
+        options: [
+            { text: "Panic. I forgot how to write `map()` without Stack Overflow.", scoreModifier: { aiDependencyScore: 20, chaosScore: 5 } },
+            { text: "Stare at the blank cursor until it comes back.", scoreModifier: { burnoutScore: 20 } },
+            { text: "Actually write logic with my brain.", scoreModifier: { egoScore: 15, cleanCodeScore: 10 } },
+            { text: "Go outside and try to find where the cloud is.", scoreModifier: { chaosScore: 20 } }
+        ]
+    },
+    {
+        id: 10,
+        text: "What is your career goal for 2035?",
+        options: [
+            { text: "To be the last human dev on earth.", scoreModifier: { egoScore: 20, burnoutScore: 10 } },
+            { text: "To finally understand Webpack.", scoreModifier: { burnoutScore: 20, chaosScore: 5 } },
+            { text: "To own the AI that replaces me.", scoreModifier: { aiDependencyScore: 20, egoScore: 10 } },
+            { text: "To live in a cabin with no electronics.", scoreModifier: { burnoutScore: 10, chaosScore: 15 } }
+        ]
+    }
 ];
