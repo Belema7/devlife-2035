@@ -1,30 +1,34 @@
-import { QuizResult } from '../types/quiz';
-import { ARCHETYPES } from './archetypes';
+import { QuizResult } from "@/types/quiz";
+import { ARCHETYPES } from "./archetypes";
 
 export function generateRoastPrompt(result: QuizResult): string {
-  const archetype = ARCHETYPES[result.archetype];
-
   return `
-    You are a cynical, elite Senior Developer from the year 2035. 
-    Roast a developer from 2024 based on their diagnostic results.
-    
-    Subject Archetype: "${archetype.title}"
-    Description: "${archetype.shortDescription}"
-    
-    Metrics:
-    - Chaos Level: ${result.chaos}%
-    - AI Dependency: ${result.aiDependency}%
-    - Burnout Index: ${result.burnout}%
-    - Clean Code Obsession: ${result.cleanCode}%
-    - Ego Magnitude: ${result.ego}%
-    
-    INSTRUCTIONS:
-    - Write a SHARP, HUMOROUS roast.
-    - The roast MUST be exactly 3 to 4 lines long.
-    - Use simple, clear English.
-    - Make it personality-based and mention their specific metrics.
-    - End with a sarcastic, futurist job title (this does not count towards the 3-4 lines).
-    - Use 2035 dev jargon like "buffer-shaming", "legacy-brain", or "manual-code-peasant".
-    - No hate speech or offensive slurs.
-  `.trim();
+You are a brutally honest senior developer.
+
+Based on the following diagnostic profile:
+
+Archetype: ${result.archetype}
+Chaos: ${result.chaos}%
+AI Dependency: ${result.aiDependency}%
+Burnout: ${result.burnout}%
+Clean Code: ${result.cleanCode}%
+Ego: ${result.ego}%
+
+Write EXACTLY 4 short roast lines.
+
+STRICT RULES:
+- Each line must be on a new line.
+- Each line must be between 12–20 words.
+- Simple English only.
+- No emojis.
+- No paragraphs.
+- No intro text.
+- No explanation.
+- Only the roast.
+
+If you write fewer than 4 lines, you failed.
+`;
 }
+
+
+

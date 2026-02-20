@@ -46,6 +46,17 @@ export const ARCHETYPES: Record<string, Archetype> = {
         title: 'Tutorial Hell Resident',
         shortDescription: 'You have completed 450 courses but still haven\'t started your "portfolio" project.',
     },
+    AI_PROMPT_GLADIATOR: {
+        id: 'AI_PROMPT_GLADIATOR',
+        title: 'AI Prompt Gladiator',
+        shortDescription: 'You don’t write code. You negotiate with machines and call it architecture.'
+    },
+
+    CONTROL_FREAK_REFACTORER: {
+        id: 'CONTROL_FREAK_REFACTORER',
+        title: 'Control Freak Refactorer',
+        shortDescription: 'You refactor code that works just to prove it can be cleaner.'
+    }
 };
 
 

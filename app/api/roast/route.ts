@@ -31,8 +31,9 @@ export async function POST(req: NextRequest) {
                     }]
                 }],
                 generationConfig: {
-                    temperature: 0.8,
-                    maxOutputTokens: 300,
+                    temperature: 0.6,          // more controlled output
+                    maxOutputTokens: 120,      // enough for 4 lines
+                    topP: 0.9,
                 },
                 system_instruction: {
                     parts: [{
@@ -49,7 +50,7 @@ export async function POST(req: NextRequest) {
 
             if (response.status === 429) {
                 return NextResponse.json({
-                    roast: `QUOTA_EXHAUSTED: The AI is currently recharge-restricted. (Error: ${errorMsg})`
+                    roast: `QUOTA_EXHAUSTED: The AI is currently recharge-restricted. You're probably just a mediocre developer anyway :)`
                 }, { status: 429 });
             }
 

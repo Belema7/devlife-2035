@@ -60,7 +60,7 @@ export default function ResultPage() {
                     <h1 className="text-3xl font-black glitch-text uppercase border-b border-primary/20 pb-4">
                         {archetype.title}
                     </h1>
-                    <p className="text-sm opacity-70 italic max-w-2xl">
+                    <p className="text-2xl opacity-70 italic max-w-2xl text-yellow-600">
                         "{archetype.shortDescription}"
                     </p>
                 </header>
