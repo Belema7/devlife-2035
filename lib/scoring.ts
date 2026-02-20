@@ -10,6 +10,7 @@ export function computeResult(answers: number[]): QuizResult {
         ego: 0,
     };
 
+    // Calculate raw scores
     answers.forEach((optionIndex, questionIndex) => {
         const question = QUESTIONS[questionIndex];
         if (!question) return;
@@ -25,9 +26,11 @@ export function computeResult(answers: number[]): QuizResult {
         if (mod.egoScore) scores.ego += mod.egoScore;
     });
 
-    // Normalize to 0-100 scale based on max possible score per trait
-    // (Approximated based on max possible per trait in questions)
-    const normalize = (val: number) => Math.min(100, Math.max(0, val));
+    // Normalize scores to 0-100
+    // Max possible score varies, but we'll normalize based on the number of questions
+    // Max score per question is around 25 per trait.
+    const maxPossible = QUESTIONS.length * 15; // Conservative average max
+    const normalize = (val: number) => Math.min(100, Math.max(0, Math.round((val / maxPossible) * 100)));
 
     const result: QuizResult = {
         archetype: '',
@@ -38,15 +41,20 @@ export function computeResult(answers: number[]): QuizResult {
         ego: normalize(scores.ego),
     };
 
-    // Determine dominant archetype
+    // Determine dominant archetype with more nuanced logic
     const traits = [
-        { id: 'AI_OVERLORD_DEPENDENT', val: result.aiDependency },
-        { id: 'LEGACY_MONSTER_MAINTAINER', val: result.burnout + result.chaos / 2 },
-        { id: 'FRAMEWORK_HOPPER_3000', val: result.chaos + result.ego / 2 },
-        { id: 'CLEAN_CODE_ARCHITECT', val: result.cleanCode },
-        { id: 'BURNED_OUT_SENIOR', val: result.burnout },
+        { id: 'AI_OVERLORD_DEPENDENT', val: result.aiDependency * 1.5 },
+        { id: 'LEGACY_MONSTER_MAINTAINER', val: result.burnout * 0.8 + result.chaos * 0.4 },
+        { id: 'FRAMEWORK_HOPPER_3000', val: result.chaos * 1.2 + result.ego * 0.3 },
+        { id: 'CLEAN_CODE_ARCHITECT', val: result.cleanCode * 1.5 },
+        { id: 'BURNED_OUT_SENIOR', val: result.burnout * 1.5 },
+        { id: 'FULL_STACK_WIZARD_EXHAUSTED', val: (result.cleanCode + result.chaos + result.burnout) / 2 },
+        { id: 'CSS_MAGICIAN_NIHILIST', val: result.chaos * 0.8 + result.burnout * 0.7 },
+        { id: 'SECURITY_PARANOID_BOT', val: result.cleanCode * 1.2 + result.ego * 0.5 },
+        { id: 'TUTORIAL_HELL_RESIDENT', val: result.aiDependency * 0.8 + result.chaos * 0.5 },
     ];
 
+    // Sort by value descending
     traits.sort((a, b) => b.val - a.val);
     result.archetype = traits[0].id;
 

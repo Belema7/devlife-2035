@@ -15,7 +15,8 @@ export default function QuizPage() {
     const [isLoading, setIsLoading] = useState(false);
 
     const handleAnswer = (optionIndex: number) => {
-        const newAnswers = [...answers, optionIndex];
+        const newAnswers = [...answers];
+        newAnswers[currentStep] = optionIndex;
         setAnswers(newAnswers);
 
         if (currentStep < QUESTIONS.length - 1) {
@@ -23,6 +24,12 @@ export default function QuizPage() {
         } else {
             setIsLoading(true);
             // Wait for loading sequence to finish before navigating
+        }
+    };
+
+    const handleBack = () => {
+        if (currentStep > 0) {
+            setCurrentStep(currentStep - 1);
         }
     };
 
@@ -40,6 +47,8 @@ export default function QuizPage() {
                     questionIndex={currentStep}
                     totalQuestions={QUESTIONS.length}
                     onAnswer={handleAnswer}
+                    onBack={handleBack}
+                    selectedOption={answers[currentStep]}
                 />
             ) : (
                 <LoadingSequence onComplete={handleLoadingComplete} />

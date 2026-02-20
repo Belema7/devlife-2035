@@ -1,13 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import OpenAI from 'openai';
 import { generateRoastPrompt } from '../../../lib/aiPrompt';
 
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent';
 
 export async function POST(req: NextRequest) {
     try {
+        if (!GEMINI_API_KEY) {
+            console.error('Missing GEMINI_API_KEY in environment variables');
+            return NextResponse.json({ roast: "CONFIG_ERROR: GEMINI_API_KEY is missing. Check your .env.local file." }, { status: 500 });
+        }
+
         const result = await req.json();
 
         if (!result) {
@@ -16,30 +19,54 @@ export async function POST(req: NextRequest) {
 
         const prompt = generateRoastPrompt(result);
 
-        const response = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
-            messages: [
-                {
-                    role: "system",
-                    content: "You are an elite, cynical senior developer from the year 2035."
+        const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                contents: [{
+                    parts: [{
+                        text: prompt
+                    }]
+                }],
+                generationConfig: {
+                    temperature: 0.8,
+                    maxOutputTokens: 300,
                 },
-                {
-                    role: "user",
-                    content: prompt
+                system_instruction: {
+                    parts: [{
+                        text: 'You are an elite, cynical senior developer from the year 2035.'
+                    }]
                 }
-            ],
-            temperature: 0.7,
-            max_tokens: 250,
+            }),
         });
 
-        const roast = response.choices[0]?.message?.content || "System failure. Your future is too bleak even for my circuits.";
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            const errorMsg = errorData?.error?.message || response.statusText;
+            console.error('Gemini API error:', errorMsg);
+
+            if (response.status === 429) {
+                return NextResponse.json({
+                    roast: `QUOTA_EXHAUSTED: The AI is currently recharge-restricted. (Error: ${errorMsg})`
+                }, { status: 429 });
+            }
+
+            throw new Error(`Gemini API failed with status ${response.status}: ${errorMsg}`);
+        }
+
+        const data = await response.json();
+        const roast = data?.candidates?.[0]?.content?.parts?.[0]?.text || "System failure. Your future is too bleak even for my circuits.";
 
         return NextResponse.json({ roast });
+
     } catch (error: any) {
         console.error('AI Roast Error:', error);
         return NextResponse.json(
-            { roast: "OPENAI_API_KEY_MISSING_OR_INVALID: Unable to calculate your specific doom. You're probably just a mediocre 10x developer anyway." },
+            { roast: `SYSTEM_ERROR: Unable to calculate your specific doom. ${error.message || "Unknown error"}. You're probably just a mediocre developer anyway.` },
             { status: 500 }
         );
     }
 }
+

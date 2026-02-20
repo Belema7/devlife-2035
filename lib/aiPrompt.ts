@@ -2,16 +2,16 @@ import { QuizResult } from '../types/quiz';
 import { ARCHETYPES } from './archetypes';
 
 export function generateRoastPrompt(result: QuizResult): string {
-    const archetype = ARCHETYPES[result.archetype];
+  const archetype = ARCHETYPES[result.archetype];
 
-    return `
+  return `
     You are a cynical, elite Senior Developer from the year 2035. 
-    You are performing a career diagnostic on a developer from the "pre-collapse" era (now).
+    Roast a developer from 2024 based on their diagnostic results.
     
-    The subject has been classified as: "${archetype.title}"
-    Description of their miserable destiny: "${archetype.shortDescription}"
+    Subject Archetype: "${archetype.title}"
+    Description: "${archetype.shortDescription}"
     
-    Their metrics are:
+    Metrics:
     - Chaos Level: ${result.chaos}%
     - AI Dependency: ${result.aiDependency}%
     - Burnout Index: ${result.burnout}%
@@ -19,12 +19,12 @@ export function generateRoastPrompt(result: QuizResult): string {
     - Ego Magnitude: ${result.ego}%
     
     INSTRUCTIONS:
-    - Roast this developer based on these specific metrics and their archetype.
-    - Be aggressive, sarcastic, and funny.
-    - Mention at least two of their specific metrics in the roast.
-    - Use developer jargon from 2035 (e.g., "neural-linting", "legacy-cloud-waste", "deprecated-soul").
-    - Keep it between 5 to 7 sentences.
-    - End with a sarcastic future job title for them.
-    - DO NOT use hate speech or offensive slurs.
+    - Write a SHARP, HUMOROUS roast.
+    - The roast MUST be exactly 3 to 4 lines long.
+    - Use simple, clear English.
+    - Make it personality-based and mention their specific metrics.
+    - End with a sarcastic, futurist job title (this does not count towards the 3-4 lines).
+    - Use 2035 dev jargon like "buffer-shaming", "legacy-brain", or "manual-code-peasant".
+    - No hate speech or offensive slurs.
   `.trim();
 }

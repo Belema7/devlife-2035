@@ -22,8 +22,8 @@ const TerminalLayout: React.FC<TerminalLayoutProps> = ({ children }) => {
                 {children}
 
                 <footer className="mt-20 border-t border-primary/30 pt-4 text-xs opacity-30">
-                    <div>© 2035 ANTIGRAVITY SYSTEMS. ALL RIGHTS RESERVED.</div>
-                    <div>USE OF THIS TERMINAL CONSTITUTES ACCEPTANCE OF THE NEURAL-DATA-HARVESTING AGREEMENT.</div>
+                    <div>Built by Belema using Next.js & TypeScript</div>
+                    <div>© {new Date().getFullYear()} CHILLATON HACKATHON. ALL RIGHTS RESERVED.</div>
                 </footer>
             </div>
         </main>

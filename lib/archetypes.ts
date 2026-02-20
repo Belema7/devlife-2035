@@ -26,4 +26,26 @@ export const ARCHETYPES: Record<string, Archetype> = {
         title: 'Clean Code Architect',
         shortDescription: 'You\'ve spent 40 hours perfecting an abstraction for a function that will be called exactly once.',
     },
+    FULL_STACK_WIZARD_EXHAUSTED: {
+        id: 'FULL_STACK_WIZARD_EXHAUSTED',
+        title: 'Exhausted Full-Stack Wizard',
+        shortDescription: 'You can build an entire ecosystem in an afternoon, but you can\'t remember the last time you saw sunlight.',
+    },
+    CSS_MAGICIAN_NIHILIST: {
+        id: 'CSS_MAGICIAN_NIHILIST',
+        title: 'Nihilistic CSS Magician',
+        shortDescription: 'You can center a div in 15 different ways, but you no longer believe that anything has meaning.',
+    },
+    SECURITY_PARANOID_BOT: {
+        id: 'SECURITY_PARANOID_BOT',
+        title: 'Security Paranoid Bot',
+        shortDescription: 'You\'ve encrypted your toaster. You don\'t trust your own code, and honestly, neither do we.',
+    },
+    TUTORIAL_HELL_RESIDENT: {
+        id: 'TUTORIAL_HELL_RESIDENT',
+        title: 'Tutorial Hell Resident',
+        shortDescription: 'You have completed 450 courses but still haven\'t started your "portfolio" project.',
+    },
 };
+
+
