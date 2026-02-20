@@ -17,7 +17,7 @@ const RoastOutput: React.FC<RoastOutputProps> = ({ roast }) => {
                 &gt; DIAGNOSTIC_ANALYSIS_COMPLETE:
             </div>
             <div className="text-primary/90 leading-relaxed italic">
-                <Typewriter text={roast} speed={5} />
+                <Typewriter text={roast} speed={3} />
             </div>
         </div>
     );
