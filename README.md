@@ -33,8 +33,8 @@ The system utilizes a hard-coded repository of personality-specific roasts. Inst
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/developer-future-simulator.git
-cd developer-future-simulator
+git clone https://github.com/Belema7/devlife-2035
+cd devlife-2035
 ```
 
 ### 2. Install Dependencies
@@ -62,6 +62,4 @@ The application will be available at `http://localhost:3000`.
 - Expanded question pool with Randomized selection.
 - Enhanced terminal animations and visual effects.
 
-## License
 
-This project is licensed under the MIT License.
