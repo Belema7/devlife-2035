@@ -9,7 +9,7 @@ export const ARCHETYPES: Record<string, Archetype> = {
 You wait for autocomplete to think for you.
 If the internet blinks, your skills disappear.`,
 
-    secondaryRoast: `You cannot debug without asking a machine first.
+        secondaryRoast: `You cannot debug without asking a machine first.
 Your confidence is rented, not owned.
 Take away the tools and you are just guessing loudly.`
     },
@@ -17,11 +17,11 @@ Take away the tools and you are just guessing loudly.`
         id: 'LEGACY_MONSTER_MAINTAINER',
         title: 'Legacy Monster Maintainer',
         shortDescription: 'You spend your days whispering to COBOL spirits and praying the mainframe doesn\'t notice your fear.',
-            primaryRoast: `You survive by fear and undocumented behavior.
+        primaryRoast: `You survive by fear and undocumented behavior.
 Every deploy feels like defusing a bomb.
 You are maintaining history, not building the future.`,
 
-    secondaryRoast: `You are trapped in a museum of bad decisions.
+        secondaryRoast: `You are trapped in a museum of bad decisions.
 Nothing improves, it only survives.
 Your career runs on life support.`
     },
@@ -33,7 +33,7 @@ Your career runs on life support.`
 Your resume is wide and painfully shallow.
 You chase hype because depth scares you.`,
 
-    secondaryRoast: `You rebuild everything except your fundamentals.
+        secondaryRoast: `You rebuild everything except your fundamentals.
 Your GitHub is noise without substance.
 You are busy, not valuable.`
     },
@@ -45,7 +45,7 @@ You are busy, not valuable.`
 Your passion expired three companies ago.
 You are here for the paycheck and nothing else.`,
 
-    secondaryRoast: `You mentor with sarcasm and deploy with resentment.
+        secondaryRoast: `You mentor with sarcasm and deploy with resentment.
 Every meeting drains what little energy remains.
 You are not leading, you are surviving.`
     },
@@ -57,7 +57,7 @@ You are not leading, you are surviving.`
 Your abstractions solve imaginary problems.
 You built elegance where speed was needed.`,
 
-    secondaryRoast: `You turned simple code into academic research.
+        secondaryRoast: `You turned simple code into academic research.
 Nobody understands it, including you.
 You value beauty over delivery every time.`
     },
@@ -69,7 +69,7 @@ You value beauty over delivery every time.`
 You build everything but rest and balance.
 Your code is full stack, your life is empty.`,
 
-    secondaryRoast: `You are a one-person band playing to an empty room.
+        secondaryRoast: `You are a one-person band playing to an empty room.
 Your burnout is the price of your versatility.
 You can create worlds but not a sustainable one for yourself.`
     },
@@ -81,7 +81,7 @@ You can create worlds but not a sustainable one for yourself.`
 Your layouts are perfect and pointless.
 You mastered styling, not impact.`,
 
-    secondaryRoast: `You argue about spacing while features burn.
+        secondaryRoast: `You argue about spacing while features burn.
 You fix alignment like it saves the product.
 You are polishing a sinking ship.`
     },
@@ -93,7 +93,7 @@ You are polishing a sinking ship.`
 Nothing ships without ten threat models.
 You built a vault with nothing inside.`,
 
-    secondaryRoast: `You treat teammates like attackers.
+        secondaryRoast: `You treat teammates like attackers.
 Your paranoia delays everything.
 You secured the system into irrelevance.`
     },
@@ -106,7 +106,7 @@ You secured the system into irrelevance.`
 Your progress lives inside video players.
 You fear the blank project screen.`,
 
-    secondaryRoast: `You copy patterns without understanding them.
+        secondaryRoast: `You copy patterns without understanding them.
 Your confidence resets every new task.
 You are educated and unproven.`
     },
@@ -118,7 +118,7 @@ You are educated and unproven.`
 Your workflow depends on better wording.
 You outsource thinking and call it strategy.`,
 
-    secondaryRoast: `You mistake automation for expertise.
+        secondaryRoast: `You mistake automation for expertise.
 Your leverage disappears when models change.
 You are replaceable by the next interface.`
     },
@@ -126,14 +126,18 @@ You are replaceable by the next interface.`
         id: 'CONTROL_FREAK_REFACTORER',
         title: 'Control Freak Refactorer',
         shortDescription: 'You refactor code that works just to prove it can be cleaner.',
-       primaryRoast: `You rewrite working code for satisfaction.
+        primaryRoast: `You rewrite working code for satisfaction.
 Progress slows whenever you get inspired.
 You value control more than momentum.`,
 
-    secondaryRoast: `You cannot leave anything untouched.
+        secondaryRoast: `You cannot leave anything untouched.
 Your need for perfection blocks real delivery.
 You refactor trust out of your own team.`
     }
 };
+
+
+
+
 
 
