@@ -21,6 +21,8 @@ export type Archetype = {
     id: string;
     title: string;
     shortDescription: string;
+    primaryRoast: string;
+    secondaryRoast: string;
 };
 
 export type QuizResult = {
