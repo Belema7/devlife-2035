@@ -7,6 +7,7 @@ import QuestionBlock from '../../components/QuestionBlock';
 import LoadingSequence from '../../components/LoadingSequence';
 import { QUESTIONS } from '../../lib/questions';
 import { computeResult } from '../../lib/scoring';
+import Link from 'next/link';
 
 export default function QuizPage() {
     const router = useRouter();
@@ -41,6 +42,9 @@ export default function QuizPage() {
 
     return (
         <TerminalLayout>
+            <div className='mb-4 text-sm '>
+                <button onClick={() => router.push('/')} className='bg-amber-600 px-4 py-2 text-black rounded'>Back to Home</button>
+            </div>
             {!isLoading ? (
                 <QuestionBlock
                     question={QUESTIONS[currentStep]}

@@ -5,122 +5,134 @@ export const ARCHETYPES: Record<string, Archetype> = {
         id: 'AI_OVERLORD_DEPENDENT',
         title: 'AI Overlord Dependent',
         shortDescription: 'Your cursor hasn\'t moved in 3 years. You just describe things to a chatbot and hope for the best.',
-        primaryRoast: `Your cursor has not moved in days.
-You are just a human interface for a chatbot.
-If the API goes down, so does your career.`,
-        secondaryRoast: `Your identity has been replaced by a JSON response.
-You do not write code, you copy-paste hallucinations.
-You are the reason software is getting worse.`
+        primaryRoast: `You do not solve problems.
+You wait for autocomplete to think for you.
+If the internet blinks, your skills disappear.`,
+
+    secondaryRoast: `You cannot debug without asking a machine first.
+Your confidence is rented, not owned.
+Take away the tools and you are just guessing loudly.`
     },
     LEGACY_MONSTER_MAINTAINER: {
         id: 'LEGACY_MONSTER_MAINTAINER',
         title: 'Legacy Monster Maintainer',
         shortDescription: 'You spend your days whispering to COBOL spirits and praying the mainframe doesn\'t notice your fear.',
-        primaryRoast: `You are a digital archaeologist digging through cobwebs.
-You fear the day the last person who understands the system retires.
-You are the only thing standing between us and a total blackout.`,
-        secondaryRoast: `You spend your life fixing bugs in code written before you were born.
-Your skills are as obsolete as the hardware you maintain.
-You are trapped in a loop of technical debt.`
+            primaryRoast: `You survive by fear and undocumented behavior.
+Every deploy feels like defusing a bomb.
+You are maintaining history, not building the future.`,
+
+    secondaryRoast: `You are trapped in a museum of bad decisions.
+Nothing improves, it only survives.
+Your career runs on life support.`
     },
     FRAMEWORK_HOPPER_3000: {
         id: 'FRAMEWORK_HOPPER_3000',
         title: 'Framework Hopper 3000',
         shortDescription: 'You\'ve rewritten your "Hello World" app in 14 different experimental meta-frameworks this week.',
-        primaryRoast: `You have more starred repos than lines of production code.
-You rewrite your portfolio every weekend.
-You are a tourist in every ecosystem and a resident in none.`,
-        secondaryRoast: `Your codebase is a graveyard of experimental libraries.
-You spend more time configuring build tools than solving problems.
-You are chasing trends into a career dead end.`
+        primaryRoast: `You switch stacks before mastering basics.
+Your resume is wide and painfully shallow.
+You chase hype because depth scares you.`,
+
+    secondaryRoast: `You rebuild everything except your fundamentals.
+Your GitHub is noise without substance.
+You are busy, not valuable.`
     },
     BURNED_OUT_SENIOR: {
         id: 'BURNED_OUT_SENIOR',
         title: 'Burned-Out Senior',
         shortDescription: 'You communicate exclusively in sighs and Jira ticket closures. Your soul is a 404 error.',
-        primaryRoast: `You have forgotten what it feels like to enjoy coding.
-Your coffee is cold and your tickets are never-ending.
-You are just waiting for the sweet release of retirement.`,
-        secondaryRoast: `Your soul is a 404 error.
-You have become a bottleneck of cynicism.
-Every pull request you review dies a slow, painful death.`
+        primaryRoast: `You no longer argue, you just approve.
+Your passion expired three companies ago.
+You are here for the paycheck and nothing else.`,
+
+    secondaryRoast: `You mentor with sarcasm and deploy with resentment.
+Every meeting drains what little energy remains.
+You are not leading, you are surviving.`
     },
     CLEAN_CODE_ARCHITECT: {
         id: 'CLEAN_CODE_ARCHITECT',
         title: 'Clean Code Architect',
         shortDescription: 'You\'ve spent 40 hours perfecting an abstraction for a function that will be called exactly once.',
-        primaryRoast: `You spend 40 hours naming a single variable.
-Your abstractions are beautiful and completely useless.
-You have created a cathedral where a shed would have sufficed.`,
-        secondaryRoast: `Your code is so clean it does absolutely nothing.
-You have successfully abstracted away all utility.
-You are a philosopher, not a developer.`
+        primaryRoast: `You optimize patterns nobody asked for.
+Your abstractions solve imaginary problems.
+You built elegance where speed was needed.`,
+
+    secondaryRoast: `You turned simple code into academic research.
+Nobody understands it, including you.
+You value beauty over delivery every time.`
     },
     FULL_STACK_WIZARD_EXHAUSTED: {
         id: 'FULL_STACK_WIZARD_EXHAUSTED',
         title: 'Exhausted Full-Stack Wizard',
         shortDescription: 'You can build an entire ecosystem in an afternoon, but you can\'t remember the last time you saw sunlight.',
-        primaryRoast: `You can build an entire ecosystem in an afternoon.
-But you have forgotten the color of the sun.
-You are a one-person army with no reinforcements.`,
-        secondaryRoast: `Your health is as unstable as a dev environment.
-You are one urgent request away from a total system crash.
-You are carrying the weight of the world on tired shoulders.`
+        primaryRoast: `You are a jack of all trades and master of exhaustion.
+You build everything but rest and balance.
+Your code is full stack, your life is empty.`,
+
+    secondaryRoast: `You are a one-person band playing to an empty room.
+Your burnout is the price of your versatility.
+You can create worlds but not a sustainable one for yourself.`
     },
     CSS_MAGICIAN_NIHILIST: {
         id: 'CSS_MAGICIAN_NIHILIST',
         title: 'Nihilistic CSS Magician',
         shortDescription: 'You can center a div in 15 different ways, but you no longer believe that anything has meaning.',
-        primaryRoast: `You can center a div in fifteen different ways.
-But you no longer believe that anything has meaning.
-You are a master of the surface with nothing underneath.`,
-        secondaryRoast: `Your life is a series of media queries.
-You have spent more time on z-index than on your own relationships.
-Your world is a grid that never aligns.`
+        primaryRoast: `You control pixels but not direction.
+Your layouts are perfect and pointless.
+You mastered styling, not impact.`,
+
+    secondaryRoast: `You argue about spacing while features burn.
+You fix alignment like it saves the product.
+You are polishing a sinking ship.`
     },
     SECURITY_PARANOID_BOT: {
         id: 'SECURITY_PARANOID_BOT',
         title: 'Security Paranoid Bot',
         shortDescription: 'You\'ve encrypted your toaster. You don\'t trust your own code, and honestly, neither do we.',
-        primaryRoast: `You have encrypted your toaster and your dreams.
-You do not trust your own code or anyone else's.
-You are living in a bunker of your own making.`,
-        secondaryRoast: `Your security protocols are the reason nothing ever ships.
-You have successfully made the system unusable in the name of safety.
-You are your own biggest threat.`
+        primaryRoast: `You block features before they exist.
+Nothing ships without ten threat models.
+You built a vault with nothing inside.`,
+
+    secondaryRoast: `You treat teammates like attackers.
+Your paranoia delays everything.
+You secured the system into irrelevance.`
     },
+
     TUTORIAL_HELL_RESIDENT: {
         id: 'TUTORIAL_HELL_RESIDENT',
         title: 'Tutorial Hell Resident',
         shortDescription: 'You have completed 450 courses but still haven\'t started your "portfolio" project.',
-        primaryRoast: `You have completed four hundred courses this year.
-But you still cannot start a project from scratch.
-You are a professional student of things you will never build.`,
-        secondaryRoast: `Your portfolio is just a collection of follow-along results.
-You have zero original thoughts in your codebase.
-You are a shadow of other people's expertise.`
+        primaryRoast: `You learn constantly and build nothing.
+Your progress lives inside video players.
+You fear the blank project screen.`,
+
+    secondaryRoast: `You copy patterns without understanding them.
+Your confidence resets every new task.
+You are educated and unproven.`
     },
     AI_PROMPT_GLADIATOR: {
         id: 'AI_PROMPT_GLADIATOR',
         title: 'AI Prompt Gladiator',
         shortDescription: 'You don’t write code. You negotiate with machines and call it architecture.',
-        primaryRoast: `You do not write code, you negotiate with machines.
-You think you are an architect, but you are just a prompter.
-Your value decreases with every model update.`,
-        secondaryRoast: `You are the middleman that nobody asked for.
-Your career is built on a house of cards that OpenAI owns.
-You are a glorified copywriter.`
+        primaryRoast: `You refine prompts instead of skills.
+Your workflow depends on better wording.
+You outsource thinking and call it strategy.`,
+
+    secondaryRoast: `You mistake automation for expertise.
+Your leverage disappears when models change.
+You are replaceable by the next interface.`
     },
     CONTROL_FREAK_REFACTORER: {
         id: 'CONTROL_FREAK_REFACTORER',
         title: 'Control Freak Refactorer',
         shortDescription: 'You refactor code that works just to prove it can be cleaner.',
-        primaryRoast: `You refactor code that works just to prove it can be cleaner.
-You are never satisfied with good enough.
-You are the reason projects are never finished.`,
-        secondaryRoast: `You are a perfectionist in a world of compromises.
-You have rewritten the same module five times this month.
-Your team hates your pull requests.`
+       primaryRoast: `You rewrite working code for satisfaction.
+Progress slows whenever you get inspired.
+You value control more than momentum.`,
+
+    secondaryRoast: `You cannot leave anything untouched.
+Your need for perfection blocks real delivery.
+You refactor trust out of your own team.`
     }
 };
 
